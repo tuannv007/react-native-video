@@ -72,7 +72,7 @@
             android:includeFontPadding="false"
             android:textColor="#FFBEBEBE"/>
 
-        <ImageButton
+        <ImageButton android:visibility="gone"
             android:id="@id/exo_fullscreen"
             style="@style/ExoMediaButton.FullScreen"
             android:layout_width="30dp"
