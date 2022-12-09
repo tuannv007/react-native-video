@@ -1771,19 +1771,19 @@ class ReactExoplayerView extends FrameLayout implements
     }
 
     private void updateFullScreenButtonVisbility() {
-//         if (playerControlView != null) {
-//             final ImageButton fullScreenButton = playerControlView.findViewById(R.id.exo_fullscreen);
-//             if (controls) {
-//                 //Handling the fullScreenButton click event
-//                 if (isFullscreen && fullScreenPlayerView != null && !fullScreenPlayerView.isShowing()) {
-//                     fullScreenButton.setVisibility(GONE);
-//                 } else {
-//                     fullScreenButton.setVisibility(VISIBLE);
-//                 }
-//             } else {
-//                 fullScreenButton.setVisibility(GONE);
-//             }
-//         }
+        if (playerControlView != null) {
+            final ImageButton fullScreenButton = playerControlView.findViewById(R.id.exo_fullscreen);
+            if (controls) {
+                //Handling the fullScreenButton click event
+                if (isFullscreen && fullScreenPlayerView != null && !fullScreenPlayerView.isShowing()) {
+                    fullScreenButton.setVisibility(GONE);
+                } else {
+                    fullScreenButton.setVisibility(VISIBLE);
+                }
+            } else {
+                fullScreenButton.setVisibility(GONE);
+            }
+        }
     }
 
     public void setDisableDisconnectError(boolean disableDisconnectError) {
@@ -1806,13 +1806,14 @@ class ReactExoplayerView extends FrameLayout implements
         int uiOptions;
         if (isFullscreen) {
             if (Util.SDK_INT >= 19) { // 4.4+
-                uiOptions = SYSTEM_UI_FLAG_HIDE_NAVIGATION
-                        | SYSTEM_UI_FLAG_IMMERSIVE_STICKY
-                        | SYSTEM_UI_FLAG_FULLSCREEN;
+//                 uiOptions = SYSTEM_UI_FLAG_HIDE_NAVIGATION
+//                         | SYSTEM_UI_FLAG_IMMERSIVE_STICKY
+//                         | SYSTEM_UI_FLAG_FULLSCREEN;
             } else {
-                uiOptions = SYSTEM_UI_FLAG_HIDE_NAVIGATION
-                        | SYSTEM_UI_FLAG_FULLSCREEN;
+//                 uiOptions = SYSTEM_UI_FLAG_HIDE_NAVIGATION
+//                         | SYSTEM_UI_FLAG_FULLSCREEN;
             }
+            uiOptions = View.SYSTEM_UI_FLAG_VISIBLE;
             eventEmitter.fullscreenWillPresent();
             if (controls && fullScreenPlayerView != null) {
                 fullScreenPlayerView.show();
