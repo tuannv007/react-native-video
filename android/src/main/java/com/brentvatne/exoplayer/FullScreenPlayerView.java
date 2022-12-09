@@ -18,7 +18,7 @@ public class FullScreenPlayerView extends Dialog {
   private final OnBackPressedCallback onBackPressedCallback;
 
   public FullScreenPlayerView(Context context, ExoPlayerView exoPlayerView, PlayerControlView playerControlView, OnBackPressedCallback onBackPressedCallback) {
-    super(context, android.R.style.Theme_DeviceDefault_Light_NoActionBar);
+    super(context, android.R.style.Theme_Black_NoTitleBar);
     this.playerControlView = playerControlView;
     this.exoPlayerView = exoPlayerView;
     this.onBackPressedCallback = onBackPressedCallback;
