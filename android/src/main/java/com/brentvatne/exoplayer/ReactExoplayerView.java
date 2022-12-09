@@ -1771,19 +1771,19 @@ class ReactExoplayerView extends FrameLayout implements
     }
 
     private void updateFullScreenButtonVisbility() {
-        if (playerControlView != null) {
-            final ImageButton fullScreenButton = playerControlView.findViewById(R.id.exo_fullscreen);
-            if (controls) {
-                //Handling the fullScreenButton click event
-                if (isFullscreen && fullScreenPlayerView != null && !fullScreenPlayerView.isShowing()) {
-                    fullScreenButton.setVisibility(GONE);
-                } else {
-                    fullScreenButton.setVisibility(VISIBLE);
-                }
-            } else {
-                fullScreenButton.setVisibility(GONE);
-            }
-        }
+//         if (playerControlView != null) {
+//             final ImageButton fullScreenButton = playerControlView.findViewById(R.id.exo_fullscreen);
+//             if (controls) {
+//                 //Handling the fullScreenButton click event
+//                 if (isFullscreen && fullScreenPlayerView != null && !fullScreenPlayerView.isShowing()) {
+//                     fullScreenButton.setVisibility(GONE);
+//                 } else {
+//                     fullScreenButton.setVisibility(VISIBLE);
+//                 }
+//             } else {
+//                 fullScreenButton.setVisibility(GONE);
+//             }
+//         }
     }
 
     public void setDisableDisconnectError(boolean disableDisconnectError) {
