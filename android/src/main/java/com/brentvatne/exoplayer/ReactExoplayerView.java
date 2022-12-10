@@ -1771,19 +1771,20 @@ class ReactExoplayerView extends FrameLayout implements
     }
 
     private void updateFullScreenButtonVisbility() {
-        if (playerControlView != null) {
-            final ImageButton fullScreenButton = playerControlView.findViewById(R.id.exo_fullscreen);
-            if (controls) {
-                //Handling the fullScreenButton click event
-                if (isFullscreen && fullScreenPlayerView != null && !fullScreenPlayerView.isShowing()) {
-                    fullScreenButton.setVisibility(GONE);
-                } else {
-                    fullScreenButton.setVisibility(VISIBLE);
-                }
-            } else {
-                fullScreenButton.setVisibility(GONE);
-            }
-        }
+//         if (playerControlView != null) {
+//             final ImageButton fullScreenButton = playerControlView.findViewById(R.id.exo_fullscreen);
+//             if (controls) {
+//                 //Handling the fullScreenButton click event
+//                 if (isFullscreen && fullScreenPlayerView != null && !fullScreenPlayerView.isShowing()) {
+//                     fullScreenButton.setVisibility(GONE);
+//                 } else {
+//                     fullScreenButton.setVisibility(VISIBLE);
+//                 }
+//             } else {
+//                 fullScreenButton.setVisibility(GONE);
+//             }
+//         }
+            fullScreenButton.setVisibility(VISIBLE);
     }
 
     public void setDisableDisconnectError(boolean disableDisconnectError) {
@@ -1835,7 +1836,7 @@ class ReactExoplayerView extends FrameLayout implements
             });
         }
         // need to be done at the end to avoid hiding fullscreen control button when fullScreenPlayerView is shown
-        //updateFullScreenButtonVisbility();
+        updateFullScreenButtonVisbility();
     }
 
     public void setUseTextureView(boolean useTextureView) {
