@@ -1771,8 +1771,8 @@ class ReactExoplayerView extends FrameLayout implements
     }
 
     private void updateFullScreenButtonVisbility() {
-//         if (playerControlView != null) {
-//             final ImageButton fullScreenButton = playerControlView.findViewById(R.id.exo_fullscreen);
+        if (playerControlView != null) {
+            final ImageButton fullScreenButton = playerControlView.findViewById(R.id.exo_fullscreen);
 //             if (controls) {
 //                 //Handling the fullScreenButton click event
 //                 if (isFullscreen && fullScreenPlayerView != null && !fullScreenPlayerView.isShowing()) {
@@ -1783,8 +1783,8 @@ class ReactExoplayerView extends FrameLayout implements
 //             } else {
 //                 fullScreenButton.setVisibility(GONE);
 //             }
-//         }
             fullScreenButton.setVisibility(VISIBLE);
+        }
     }
 
     public void setDisableDisconnectError(boolean disableDisconnectError) {
