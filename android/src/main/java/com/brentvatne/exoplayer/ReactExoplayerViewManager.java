@@ -79,6 +79,7 @@ public class ReactExoplayerViewManager extends ViewGroupManager<ReactExoplayerVi
     private static final String PROP_SELECTED_VIDEO_TRACK_VALUE = "value";
     private static final String PROP_HIDE_SHUTTER_VIEW = "hideShutterView";
     private static final String PROP_CONTROLS = "controls";
+    private static final String PROP_IS_DISPLAY_FULLSCREEN = "isDisplayFullscreen";
 
     private static final String PROP_SUBTITLE_STYLE = "subtitleStyle";
 
@@ -355,6 +356,11 @@ public class ReactExoplayerViewManager extends ViewGroupManager<ReactExoplayerVi
     @ReactProp(name = PROP_CONTROLS, defaultBoolean = false)
     public void setControls(final ReactExoplayerView videoView, final boolean controls) {
         videoView.setControls(controls);
+    }
+
+    @ReactProp(name = PROP_IS_DISPLAY_FULLSCREEN, defaultBoolean = false)
+    public void setIsDisplayFullScreen(final ReactExoplayerView videoView, final boolean isDisplayFullscreen) {
+        videoView.setIsDisplayFullScreen(isDisplayFullscreen);
     }
 
     @ReactProp(name = PROP_SUBTITLE_STYLE)

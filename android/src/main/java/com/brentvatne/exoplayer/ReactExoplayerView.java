@@ -203,6 +203,7 @@ class ReactExoplayerView extends FrameLayout implements
     private String drmLicenseUrl = null;
     private String[] drmLicenseHeader = null;
     private boolean controls;
+    private boolean isDisplayFullscreen;
     // \ End props
 
     // React
@@ -1783,6 +1784,11 @@ class ReactExoplayerView extends FrameLayout implements
 //             } else {
 //                 fullScreenButton.setVisibility(GONE);
 //             }
+            if (this.isDisplayFullscreen) {
+                fullScreenButton.setImageResource(com.google.android.exoplayer2.ui.R.drawable.exo_icon_fullscreen_exit);
+            } else {
+                fullScreenButton.setImageResource(com.google.android.exoplayer2.ui.R.drawable.exo_icon_fullscreen_enter);
+            }
             fullScreenButton.setVisibility(VISIBLE);
         }
     }
@@ -1914,6 +1920,15 @@ class ReactExoplayerView extends FrameLayout implements
                 removeViewAt(indexOfPC);
             }
         }
+    }
+
+    /**
+     * Handling isDisplayFullscreen prop
+     *
+     * @param controls  isDisplayFullscreen prop, if true fullscreen, if false not fullscreen
+     */
+    public void setIsDisplayFullScreen(boolean isDisplayFullscreen) {
+        this.isDisplayFullscreen = isDisplayFullscreen
     }
 
     public void setSubtitleStyle(SubtitleStyle style) {
