@@ -1928,7 +1928,7 @@ class ReactExoplayerView extends FrameLayout implements
      * @param controls  isDisplayFullscreen prop, if true fullscreen, if false not fullscreen
      */
     public void setIsDisplayFullScreen(boolean isDisplayFullscreen) {
-        this.isDisplayFullscreen = isDisplayFullscreen
+        this.isDisplayFullscreen = isDisplayFullscreen;
     }
 
     public void setSubtitleStyle(SubtitleStyle style) {
