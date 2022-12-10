@@ -1835,7 +1835,7 @@ class ReactExoplayerView extends FrameLayout implements
             });
         }
         // need to be done at the end to avoid hiding fullscreen control button when fullScreenPlayerView is shown
-        updateFullScreenButtonVisbility();
+        //updateFullScreenButtonVisbility();
     }
 
     public void setUseTextureView(boolean useTextureView) {
