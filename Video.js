@@ -490,6 +490,7 @@ Video.propTypes = {
   focusable: PropTypes.bool,
   disableBuffering: PropTypes.bool,
   controls: PropTypes.bool,
+  isDisplayFullscreen: PropTypes.bool,
   audioOnly: PropTypes.bool,
   currentTime: PropTypes.number,
   fullscreenAutorotate: PropTypes.bool,
