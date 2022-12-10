@@ -1813,10 +1813,10 @@ class ReactExoplayerView extends FrameLayout implements
 //                 uiOptions = SYSTEM_UI_FLAG_HIDE_NAVIGATION
 //                         | SYSTEM_UI_FLAG_FULLSCREEN;
             }
-            uiOptions = View.SYSTEM_UI_FLAG_VISIBLE;
+            //uiOptions = View.SYSTEM_UI_FLAG_VISIBLE;
             eventEmitter.fullscreenWillPresent();
             if (controls && fullScreenPlayerView != null) {
-                fullScreenPlayerView.show();
+                //fullScreenPlayerView.show();
             }
             post(() -> {
                 //decorView.setSystemUiVisibility(uiOptions);
@@ -1826,8 +1826,8 @@ class ReactExoplayerView extends FrameLayout implements
             //uiOptions = View.SYSTEM_UI_FLAG_VISIBLE;
             eventEmitter.fullscreenWillDismiss();
             if (controls && fullScreenPlayerView != null) {
-                fullScreenPlayerView.dismiss();
-                reLayout(exoPlayerView);
+                //fullScreenPlayerView.dismiss();
+                //reLayout(exoPlayerView);
             }
             post(() -> {
                 //decorView.setSystemUiVisibility(uiOptions);
