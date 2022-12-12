@@ -1784,11 +1784,11 @@ class ReactExoplayerView extends FrameLayout implements
 //             } else {
 //                 fullScreenButton.setVisibility(GONE);
 //             }
-            if (this.isDisplayFullscreen) {
-                fullScreenButton.setImageResource(com.google.android.exoplayer2.ui.R.drawable.exo_icon_fullscreen_exit);
-            } else {
-                fullScreenButton.setImageResource(com.google.android.exoplayer2.ui.R.drawable.exo_icon_fullscreen_enter);
-            }
+//             if (this.isDisplayFullscreen) {
+//                 fullScreenButton.setImageResource(com.google.android.exoplayer2.ui.R.drawable.exo_icon_fullscreen_exit);
+//             } else {
+//                 fullScreenButton.setImageResource(com.google.android.exoplayer2.ui.R.drawable.exo_icon_fullscreen_enter);
+//             }
             fullScreenButton.setVisibility(VISIBLE);
         }
     }
@@ -1802,6 +1802,7 @@ class ReactExoplayerView extends FrameLayout implements
             return; // Avoid generating events when nothing is changing
         }
         isFullscreen = fullscreen;
+        final ImageButton fullScreenButton = playerControlView.findViewById(R.id.exo_fullscreen);
 
         Activity activity = themedReactContext.getCurrentActivity();
         if (activity == null) {
@@ -1821,6 +1822,8 @@ class ReactExoplayerView extends FrameLayout implements
 //                         | SYSTEM_UI_FLAG_FULLSCREEN;
             }
             //uiOptions = View.SYSTEM_UI_FLAG_VISIBLE;
+            fullScreenButton.setImageResource(com.google.android.exoplayer2.ui.R.drawable.exo_icon_fullscreen_exit);
+
             eventEmitter.fullscreenWillPresent();
             if (controls && fullScreenPlayerView != null) {
                 //fullScreenPlayerView.show();
@@ -1831,6 +1834,7 @@ class ReactExoplayerView extends FrameLayout implements
             });
         } else {
             //uiOptions = View.SYSTEM_UI_FLAG_VISIBLE;
+            fullScreenButton.setImageResource(com.google.android.exoplayer2.ui.R.drawable.exo_icon_fullscreen_enter);
             eventEmitter.fullscreenWillDismiss();
             if (controls && fullScreenPlayerView != null) {
                 //fullScreenPlayerView.dismiss();
