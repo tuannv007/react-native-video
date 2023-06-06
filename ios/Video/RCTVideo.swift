@@ -605,20 +605,20 @@ class RCTVideo: UIView, RCTVideoPlayerViewControllerDelegate, RCTPlayerObserverH
                 
                 self.onVideoFullscreenPlayerWillPresent?(["target": reactTag as Any])
                 
-                viewController.present(viewController, animated:true, completion:{
+                // viewController.present(viewController, animated:true, completion:{
                    // self._playerViewController?.showsPlaybackControls = true
                     //self._fullscreenPlayerPresented = fullscreen
                     //self._playerViewController?.autorotate = self._fullscreenAutorotate
                     
                     self.onVideoFullscreenPlayerDidPresent?(["target": self.reactTag])
                     
-                })
+                // })
             }
         } else if !fullscreen && _fullscreenPlayerPresented, let _playerViewController = _playerViewController {
             self.videoPlayerViewControllerWillDismiss(playerViewController: _playerViewController)
-            _presentingViewController?.dismiss(animated: true, completion:{
+            // _presentingViewController?.dismiss(animated: true, completion:{
                 self.videoPlayerViewControllerDidDismiss(playerViewController: _playerViewController)
-            })
+            // })
         }
     }
     
