@@ -583,32 +583,32 @@ class RCTVideo: UIView, RCTVideoPlayerViewControllerDelegate, RCTPlayerObserverH
     func setFullscreen(_ fullscreen:Bool) {
         if fullscreen && !_fullscreenPlayerPresented && _player != nil {
             // Ensure player view controller is not null
-            if _playerViewController == nil {
-                self.usePlayerViewController()
-            }
+//             if _playerViewController == nil {
+//                 self.usePlayerViewController()
+//             }
             
             // Set presentation style to fullscreen
-            _playerViewController?.modalPresentationStyle = .fullScreen
+            //_playerViewController?.modalPresentationStyle = .fullScreen
             
             // Find the nearest view controller
             var viewController:UIViewController! = self.firstAvailableUIViewController()
-            if (viewController == nil) {
-                let keyWindow:UIWindow! = UIApplication.shared.keyWindow
-                viewController = keyWindow.rootViewController
-                if viewController.children.count > 0
-                {
-                    viewController = viewController.children.last
-                }
-            }
+//             if (viewController == nil) {
+//                 let keyWindow:UIWindow! = UIApplication.shared.keyWindow
+//                 viewController = keyWindow.rootViewController
+//                 if viewController.children.count > 0
+//                 {
+//                     viewController = viewController.children.last
+//                 }
+//             }
             if viewController != nil {
-                _presentingViewController = viewController
+                //_presentingViewController = viewController
                 
                 self.onVideoFullscreenPlayerWillPresent?(["target": reactTag as Any])
                 
                 viewController.present(viewController, animated:true, completion:{
-                    self._playerViewController?.showsPlaybackControls = true
-                    self._fullscreenPlayerPresented = fullscreen
-                    self._playerViewController?.autorotate = self._fullscreenAutorotate
+                   // self._playerViewController?.showsPlaybackControls = true
+                    //self._fullscreenPlayerPresented = fullscreen
+                    //self._playerViewController?.autorotate = self._fullscreenAutorotate
                     
                     self.onVideoFullscreenPlayerDidPresent?(["target": self.reactTag])
                     
